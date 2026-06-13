@@ -17,20 +17,20 @@ export function AmateHighlight() {
   return (
     <section ref={ref} className="bg-cream py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[55%_45%] gap-10 lg:gap-16 items-stretch">
+        <div className="grid lg:grid-cols-[45%_55%] gap-10 lg:gap-16 items-center">
           {/* Image */}
           <div
             className={`transition-all duration-700 ${
               isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <div className="relative aspect-[4/5] lg:aspect-auto lg:h-full min-h-[400px] rounded-sm overflow-hidden">
+            <div className="relative h-[300px] lg:h-[500px] rounded-sm overflow-hidden">
               <Image
                 src="/images/shop/amate-hands.jpg"
                 alt="Norge sosteniendo el té Ama-Té entre sus manos"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 55vw"
+                sizes="(max-width: 1024px) 100vw, 45vw"
               />
             </div>
           </div>
@@ -52,7 +52,7 @@ export function AmateHighlight() {
             />
 
             <span className="section-label-gold mb-4 block">Ama-Té</span>
-            <h2 className="font-serif font-light text-charcoal">
+            <h2 className="font-serif font-light text-charcoal text-balance">
               Un ritual en cada taza &mdash;
             </h2>
             <p className="text-charcoal/70 leading-relaxed mt-6">

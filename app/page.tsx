@@ -18,9 +18,9 @@ export default function HomePage() {
       <ThreePathways />
       <CalendarPreview />
       <LeadMagnetSection />
+      <AmateHighlight />
       <MushroomHighlight />
       <TestimonialsPreview />
-      <AmateHighlight />
       <QuickFAQ />
     </>
   )
