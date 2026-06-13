@@ -110,8 +110,8 @@ export default function CasaPage() {
                 </p>
               </div>
               
-              <Link href="/calendario" className="btn-outline">
-                Agendar una experiencia &rarr;
+              <Link href="/experiencias" className="btn-outline">
+                Explorar experiencias &rarr;
               </Link>
             </div>
 
