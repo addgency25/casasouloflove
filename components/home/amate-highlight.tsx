@@ -15,9 +15,9 @@ export function AmateHighlight() {
   const { ref, isInView } = useInView()
 
   return (
-    <section ref={ref} className="bg-cream py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[45%_55%] gap-10 lg:gap-16 items-center">
+    <section ref={ref} className="bg-cream py-24 lg:py-32 px-6 md:px-12 lg:px-16 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_1fr] gap-10 lg:gap-16 items-center">
           {/* Image */}
           <div
             className={`transition-all duration-700 ${
@@ -37,7 +37,7 @@ export function AmateHighlight() {
 
           {/* Content */}
           <div
-            className={`relative flex flex-col justify-center pl-6 lg:pl-10 transition-all duration-700 delay-200 ${
+            className={`relative flex flex-col justify-center pl-6 pr-4 lg:pl-10 lg:pr-8 overflow-visible transition-all duration-700 delay-200 ${
               isInView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
@@ -66,10 +66,10 @@ export function AmateHighlight() {
               {presentations.map((item) => (
                 <li
                   key={item.name}
-                  className="flex items-center justify-between gap-4 py-3 border-b border-charcoal/10"
+                  className="flex flex-col gap-1 py-3 border-b border-charcoal/10"
                 >
                   <span className="text-charcoal text-sm">{item.name}</span>
-                  <span className="text-charcoal/50 text-sm shrink-0">{item.note}</span>
+                  <span className="text-charcoal/50 text-sm">{item.note}</span>
                 </li>
               ))}
             </ul>
