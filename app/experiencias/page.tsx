@@ -36,7 +36,7 @@ const plantasDePoder = [
       "Música ceremonial, aromaterapia y contención amorosa",
       "Sesión de integración posterior incluida",
     ],
-    details: "5-6 horas · Presencial Miami · Evaluación previa requerida",
+    details: "5-6 horas · Presencial Miami · Entrevista previa requerida",
   },
   {
     label: "Ceremonia Sagrada",
@@ -64,7 +64,7 @@ const plantasDePoder = [
       "Espacio ceremonial sagrado con música y guía constante",
       "Integración extendida con Norge post-ceremonia",
     ],
-    details: "6-8 horas · Presencial Miami · Experiencia previa requerida",
+    details: "6-8 horas · Presencial Miami · Entrevista previa requerida",
   },
 ]
 
