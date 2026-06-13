@@ -26,7 +26,7 @@ const menuItems = [
       { label: "Presenciales", href: "/experiencias#presenciales" },
       { label: "Online", href: "/experiencias#online" },
       { type: "separator" },
-      { label: "Retreats", href: "/retreats" },
+      { label: "Retreats", href: "/retreats", labelStyle: true },
     ],
   },
   {
@@ -154,8 +154,16 @@ export function Navbar() {
                           <Link
                             key={idx}
                             href={subItem.href || "#"}
-                            className="block px-4 py-2 text-[#2a2a25] hover:text-[#394021] hover:bg-[#f5efe5] transition-colors"
-                            style={{ fontSize: "0.8rem" }}
+                            className={
+                              subItem.labelStyle
+                                ? "block px-4 py-2 font-medium text-[#918551] hover:bg-[#f5efe5] transition-colors"
+                                : "block px-4 py-2 text-[#2a2a25] hover:text-[#394021] hover:bg-[#f5efe5] transition-colors"
+                            }
+                            style={
+                              subItem.labelStyle
+                                ? { fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase" }
+                                : { fontSize: "0.8rem" }
+                            }
                           >
                             {subItem.label}
                           </Link>
@@ -241,7 +249,16 @@ export function Navbar() {
                           key={idx}
                           href={subItem.href || "#"}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block py-1.5 text-sm text-[#7a7a70] hover:text-[#394021]"
+                          className={
+                            subItem.labelStyle
+                              ? "block py-1.5 font-medium text-[#918551] hover:text-[#394021]"
+                              : "block py-1.5 text-sm text-[#7a7a70] hover:text-[#394021]"
+                          }
+                          style={
+                            subItem.labelStyle
+                              ? { fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase" }
+                              : undefined
+                          }
                         >
                           {subItem.label}
                         </Link>

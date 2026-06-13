@@ -36,7 +36,7 @@ const plantasDePoder = [
       "Música ceremonial, aromaterapia y contención amorosa",
       "Sesión de integración posterior incluida",
     ],
-    details: "5-6 horas · Presencial Miami · Evaluación previa requerida",
+    details: "5-6 horas · Presencial Miami · Entrevista previa requerida",
   },
   {
     label: "Ceremonia Sagrada",
@@ -64,7 +64,7 @@ const plantasDePoder = [
       "Espacio ceremonial sagrado con música y guía constante",
       "Integración extendida con Norge post-ceremonia",
     ],
-    details: "6-8 horas · Presencial Miami · Experiencia previa requerida",
+    details: "6-8 horas · Presencial Miami · Entrevista previa requerida",
   },
 ]
 
@@ -178,8 +178,8 @@ export default function ExperienciasPage() {
 
       {/* Meditaciones Presenciales - Forest background with list layout */}
       <section id="presenciales" className="bg-forest py-24 lg:py-32">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="mb-16">
             <span className="section-label-gold mb-4 block">En persona</span>
             <h2 className="font-serif font-light text-cream">
               Meditaciones <em className="italic">Presenciales</em> &mdash;
