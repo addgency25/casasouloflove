@@ -1,0 +1,247 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #faf6f0;
+  --foreground: #3a3a35;
+  --card: #fefdfb;
+  --card-foreground: #3a3a35;
+  --popover: #fefdfb;
+  --popover-foreground: #3a3a35;
+  --primary: #394021;
+  --primary-foreground: #fefdfb;
+  --secondary: #f5efe5;
+  --secondary-foreground: #3a3a35;
+  --muted: #f5efe5;
+  --muted-foreground: #7a7a70;
+  --accent: #ebcc93;
+  --accent-foreground: #394021;
+  --destructive: #92483b;
+  --destructive-foreground: #fefdfb;
+  --border: rgba(57, 64, 33, 0.1);
+  --input: rgba(57, 64, 33, 0.1);
+  --ring: #918551;
+  --radius: 0.125rem;
+  
+  /* Custom Casa Soul of Love Colors */
+  --forest: #394021;
+  --forest-dark: #2d3319;
+  --olive: #918551;
+  --sage: #62755f;
+  --sand: #c19f7c;
+  --terracotta: #ce854e;
+  --burgundy: #92483b;
+  --gold: #ebcc93;
+  --teal: #9fc6c5;
+  --cream: #faf6f0;
+  --cream-warm: #f5efe5;
+  --off-white: #fefdfb;
+  --charcoal: #2a2a25;
+  --text-dark: #3a3a35;
+  --text-muted: #7a7a70;
+}
+
+@theme inline {
+  --font-sans: var(--font-montserrat), 'Montserrat', sans-serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius));
+  --radius-md: calc(var(--radius) + 2px);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  
+  /* Casa Soul of Love Theme Colors */
+  --color-forest: var(--forest);
+  --color-forest-dark: var(--forest-dark);
+  --color-olive: var(--olive);
+  --color-sage: var(--sage);
+  --color-sand: var(--sand);
+  --color-terracotta: var(--terracotta);
+  --color-burgundy: var(--burgundy);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+  --color-cream: var(--cream);
+  --color-cream-warm: var(--cream-warm);
+  --color-off-white: var(--off-white);
+  --color-charcoal: var(--charcoal);
+  --color-text-dark: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-cream text-charcoal antialiased;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+  }
+  h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    line-height: 1.1;
+  }
+  h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    line-height: 1.2;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--olive);
+    font-family: var(--font-sans);
+  }
+  
+  .section-label-gold {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gold);
+    font-family: var(--font-sans);
+  }
+  
+  /* Editorial Outline Button - Primary */
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--forest);
+    background: transparent;
+    color: var(--forest);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover {
+    background: var(--forest);
+    color: var(--cream);
+  }
+  
+  /* Outline Button Light - For dark backgrounds */
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--cream);
+    background: transparent;
+    color: var(--cream);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .btn-outline-light:hover {
+    background: var(--cream);
+    color: var(--forest);
+  }
+  
+  /* Solid Button - Secondary */
+  .btn-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 2rem;
+    background: var(--forest);
+    color: var(--cream);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .btn-solid:hover {
+    background: var(--forest-dark);
+  }
+  
+  /* Nav link style */
+  .nav-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: var(--font-sans);
+  }
+  
+  /* Decorative star */
+  .star-decorator {
+    color: var(--gold);
+    font-size: 0.875rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(235, 204, 147, 0.3);
+  color: var(--forest);
+}
+
+/* Minimal input style */
+.input-minimal {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.input-minimal:focus {
+  border-bottom-color: var(--gold);
+}
+.input-minimal::placeholder {
+  opacity: 0.5;
+}
