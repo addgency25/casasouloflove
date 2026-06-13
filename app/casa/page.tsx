@@ -109,7 +109,7 @@ export default function CasaPage() {
         label="El corazón del sitio"
         title="Casa Soul of Love"
         subtitle="Bienvenido a un espacio donde cada alma es recibida con amor incondicional."
-        height="h-[50vh]"
+        height="min-h-[55vh]"
       />
 
       {/* Nuestro Propósito */}
@@ -119,15 +119,19 @@ export default function CasaPage() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left: Overlapping images */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[3/4] bg-sage w-[80%]">
-                <span className="absolute inset-0 flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Sacred Space
-                </span>
+              <div className="relative aspect-[3/4] w-[80%] rounded-sm overflow-hidden bg-sage">
+                <img
+                  src="/images/ceremony-outdoor.jpg"
+                  alt="Meditación al aire libre al atardecer en Casa Soul of Love"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="absolute -bottom-8 -right-4 lg:right-0 w-[50%] aspect-square bg-olive">
-                <span className="absolute inset-0 flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Detail
-                </span>
+              <div className="absolute -bottom-8 -right-4 lg:right-0 w-[50%] aspect-square rounded-sm overflow-hidden bg-olive border-4 border-cream">
+                <img
+                  src="/images/pathway-ceremonies.jpg"
+                  alt="Detalle de un ritual ceremonial"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -199,10 +203,12 @@ export default function CasaPage() {
 
             {/* Portrait image - bleeding to edge */}
             <div className="lg:col-span-5 order-1 lg:order-2">
-              <div className="aspect-[3/4] bg-terracotta lg:-mr-8">
-                <span className="h-full flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Portrait of Norge
-                </span>
+              <div className="aspect-[3/4] rounded-sm overflow-hidden bg-terracotta lg:-mr-8">
+                <img
+                  src="/images/norge-hero.jpg"
+                  alt="Norge, fundadora de Casa Soul of Love"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -239,9 +245,9 @@ export default function CasaPage() {
               return (
                 <div key={friend.name}>
                   {index > 0 && (
-                    <div className="h-px bg-cream/10 my-14 lg:my-20" />
+                    <div className="h-px bg-cream/10" />
                   )}
-                  <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                  <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center py-16 md:py-20">
                     {/* Image */}
                     <div
                       className={`lg:col-span-5 ${imageLeft ? "lg:order-1" : "lg:order-2"}`}
@@ -310,8 +316,14 @@ export default function CasaPage() {
 
           {/* Important note */}
           <div className="mt-20 lg:mt-24 max-w-2xl mx-auto">
-            <div className="border border-cream/15 rounded-sm px-6 py-6 text-center">
-              <p className="text-cream/50 text-sm leading-relaxed">
+            <div
+              className="rounded-sm p-6 text-center"
+              style={{
+                backgroundColor: "#f5efe5",
+                border: "1px solid rgba(57,64,33,0.15)",
+              }}
+            >
+              <p className="text-sm leading-relaxed" style={{ color: "#3a3a35" }}>
                 Los CSL Friends son profesionales independientes. Casa Soul of Love facilita la conexión y el espacio, pero cada terapeuta es responsable de su propia práctica. Para agendar, Norge te referirá personalmente.
               </p>
             </div>
