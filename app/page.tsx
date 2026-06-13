@@ -6,6 +6,7 @@ import { CalendarPreview } from "@/components/home/calendar-preview"
 import { LeadMagnetSection } from "@/components/home/lead-magnet-section"
 import { TestimonialsPreview } from "@/components/home/testimonials-preview"
 import { MushroomHighlight } from "@/components/home/mushroom-highlight"
+import { AmateHighlight } from "@/components/home/amate-highlight"
 import { QuickFAQ } from "@/components/home/quick-faq"
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <LeadMagnetSection />
       <MushroomHighlight />
       <TestimonialsPreview />
+      <AmateHighlight />
       <QuickFAQ />
     </>
   )
