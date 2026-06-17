@@ -9,20 +9,49 @@ export const metadata = {
 
 const WHATSAPP_LINK = "https://wa.me/1XXXXXXXXXX"
 
-const plantasDePoder = [
+type Ceremony = {
+  label: string
+  title: string
+  subtitle: string | null
+  image?: string
+  queEs: string
+  incluye?: string[]
+  esperar: string[]
+  note?: string
+  idealPara?: string[]
+  details: string
+}
+
+const plantasDePoder: Ceremony[] = [
   {
     label: "Microdosis",
     title: "Microdosis Mushroom Meditation",
     subtitle: null,
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b1fe8f02-e187-47f5-bd5a-50a6f25b8c4c%20%282%29-Bq2aw0AbF2Jj8dPORslUEW8Ag57ZMj.jpg",
     queEs:
-      "Sesiones de meditación guiada potenciadas con microdosis de psilocibina. Una experiencia sutil pero profunda que te permite acceder a estados expandidos de conciencia mientras mantienes total claridad y presencia.",
-    esperar: [
-      "Claridad mental y conexión profunda contigo mismo",
-      "Meditación guiada por Norge en un espacio íntimo y seguro",
-      "Integración y reflexión al cierre de la sesión",
-      "Un estado de apertura suave, sin perder el control",
+      "Una meditación guiada con dosis suaves, enfocada en la presencia, la sensibilidad y la conexión consciente. Su enfoque se basa en abrir la percepción de manera sutil, mejorar la conexión emocional y el bienestar sin alterar el estado.",
+    incluye: [
+      "0.5 g de psilocibina — se escoge el tipo de hongo dependiendo de la necesidad de la persona",
+      "Ritual de rapé para centrar, calmar y bajar la bulla de los pensamientos",
+      "Meditación guiada",
+      "Sonidos terapéuticos",
+      "Acompañamiento cercano de Norge",
     ],
-    details: "2-3 horas · Presencial Miami · Máx. 8 personas",
+    esperar: [
+      "Relajación profunda, presencia, alivio",
+      "Claridad mental",
+      "Respuestas internas sutiles",
+      "Sensación de conexión nunca antes experimentada",
+      "Calma emocional",
+    ],
+    note: "No es una ceremonia expansiva. Es un espacio contenido y consciente para acercarte con suavidad.",
+    idealPara: [
+      'Personas con curiosidad pero con miedo a "ir muy profundo"',
+      "Quienes buscan relajarse, reconectar y sentir estas herramientas naturales de poder con suavidad",
+      "Quienes desean comenzar su camino con suavidad",
+    ],
+    details: "2-3 horas · Presencial Miami · Grupal o individual",
   },
   {
     label: "Macrodosis",
@@ -112,9 +141,18 @@ export default function ExperienciasPage() {
                     {/* Image area */}
                     <div className={imageLeft ? "lg:order-1" : "lg:order-2"}>
                       <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-forest flex items-center justify-center p-8">
-                        <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
-                          {ceremony.title}
-                        </span>
+                        {ceremony.image ? (
+                          <img
+                            src={ceremony.image || "/placeholder.svg"}
+                            alt={ceremony.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                            style={{ objectPosition: "center center" }}
+                          />
+                        ) : (
+                          <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
+                            {ceremony.title}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -137,8 +175,24 @@ export default function ExperienciasPage() {
                         <p className="text-charcoal/70 leading-relaxed">{ceremony.queEs}</p>
                       </div>
 
-                      <div className="mt-6">
-                        <h4 className="text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-3">¿Qué puedes esperar?</h4>
+                      {ceremony.incluye && (
+                        <div className="mb-6 mt-6">
+                          <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">¿Qué incluye?</h4>
+                          <ul className="flex flex-col gap-2">
+                            {ceremony.incluye.map((item) => (
+                              <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
+                                <span className="text-olive shrink-0">&rarr;</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      <div className="mb-6 mt-6">
+                        <h4 className={ceremony.incluye ? "font-serif italic text-olive text-[1.1rem] mb-3" : "text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-3"}>
+                          {ceremony.incluye ? "¿Qué puedes experimentar?" : "¿Qué puedes esperar?"}
+                        </h4>
                         <ul className="flex flex-col gap-2">
                           {ceremony.esperar.map((item) => (
                             <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
@@ -148,6 +202,26 @@ export default function ExperienciasPage() {
                           ))}
                         </ul>
                       </div>
+
+                      {ceremony.note && (
+                        <p className="font-serif italic text-charcoal/50 text-sm leading-relaxed mb-6">
+                          {ceremony.note}
+                        </p>
+                      )}
+
+                      {ceremony.idealPara && (
+                        <div className="mb-6">
+                          <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">Ideal para:</h4>
+                          <ul className="flex flex-col gap-2">
+                            {ceremony.idealPara.map((item) => (
+                              <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
+                                <span className="text-olive shrink-0">&rarr;</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
 
                       <p className="mt-6 text-sm text-charcoal/50">{ceremony.details}</p>
 
