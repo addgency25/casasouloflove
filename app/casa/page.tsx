@@ -120,15 +120,21 @@ export default function CasaPage() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left: Overlapping images */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[3/4] bg-sage w-[80%]">
-                <span className="absolute inset-0 flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Sacred Space
-                </span>
+              <div className="relative aspect-[3/4] bg-sage w-[80%] overflow-hidden">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1159-WwgE7qib0jb02GCmmuiG5RVBLf6mRv.jpg"
+                  alt="Camino de piedra que conduce a la casa de Casa Soul of Love, rodeado de césped verde y un gran árbol"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "center 40%", filter: "saturate(0.9) sepia(0.05)" }}
+                />
               </div>
-              <div className="absolute -bottom-8 -right-4 lg:right-0 w-[50%] aspect-square bg-olive">
-                <span className="absolute inset-0 flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Detail
-                </span>
+              <div className="absolute -bottom-8 -right-4 lg:right-0 w-[50%] aspect-square bg-olive overflow-hidden">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0352-kCprAnrvw4ua0Wkxz5krjrI6scAuoZ.jpg"
+                  alt="Persona descansando con antifaz durante una ceremonia en un espacio íntimo y sereno"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "center center", filter: "saturate(0.9) sepia(0.05)" }}
+                />
               </div>
             </div>
 
