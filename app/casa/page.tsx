@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/page-hero"
+import { NorgeVideo } from "@/components/norge-video"
 import Link from "next/link"
 
 export const metadata = {
@@ -206,13 +207,9 @@ export default function CasaPage() {
               </Link>
             </div>
 
-            {/* Portrait image - bleeding to edge */}
+            {/* Portrait video - bleeding to edge */}
             <div className="lg:col-span-5 order-1 lg:order-2">
-              <div className="aspect-[3/4] bg-terracotta lg:-mr-8">
-                <span className="h-full flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Portrait of Norge
-                </span>
-              </div>
+              <NorgeVideo />
             </div>
           </div>
         </div>
