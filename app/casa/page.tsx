@@ -185,10 +185,19 @@ export default function CasaPage() {
 
               <div className="space-y-5 text-charcoal/70 leading-[1.8] mb-10 max-w-xl">
                 <p>
-                  Mi camino hacia la facilitación de ceremonias comenzó hace más de 8 años, cuando experimenté mi propia transformación profunda. Desde entonces, he dedicado mi vida a crear espacios seguros donde otros puedan vivir su propia sanación.
+                  Guía de experiencias visionarias y expansión de conciencia, camino conscientemente en este sendero espiritual desde el año 2008. He guiado a más de 3.000 personas en experiencias que requieren presencia, responsabilidad y sostén real, creando espacios sagrados donde el estado del SER se vuelve posible.
                 </p>
                 <p>
-                  Hasta ahora, he tenido el honor de acompañar a más de 500 almas en su proceso de transformación. Cada una me ha enseñado algo nuevo sobre la profundidad del ser humano.
+                  Mi trabajo integra rituales, meditación y la sabiduría de plantas ancestrales de poder, siempre enraizado en la presencia, el amor, la sutileza y el respeto por cada proceso.
+                </p>
+                <p>
+                  Creo profundamente que la verdadera sanación comienza cuando regresamos al cuerpo, cuando abrimos el corazón, sentimos y recordamos que ya somos completos.
+                </p>
+                <p>
+                  No guío para que dependan de mí. Guío para que vuelvan a su propia verdad, autenticidad y amor propio.
+                </p>
+                <p>
+                  Sostengo espacios donde la suavidad es fuerza y la claridad es poder. Y esto nace de la experiencia, la práctica y el respeto por cada experiencia que comparto.
                 </p>
               </div>
               
