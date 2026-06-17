@@ -140,13 +140,13 @@ export default function CasaPage() {
               </h2>
               <div className="space-y-5 text-charcoal/70 leading-[1.8] mb-10 max-w-xl">
                 <p>
-                  Casa Soul of Love es más que un espacio físico; es un santuario donde las almas vienen a recordar su verdadera naturaleza. Aquí, creemos que la sanación no es un destino, sino un viaje de regreso a ti mismo.
+                  Casa Soul of Love es un espacio sagrado de encuentro, transformación y cuidado, creado para acompañar procesos de autoconocimiento, sanación y expansión de conciencia. Es un refugio donde la meditación, las ceremonias y las experiencias grupales se integran en un entorno amoroso y contenido, pensado para que cada persona pueda reconectar con su esencia y generar cambios significativos desde un lugar profundo y auténtico.
                 </p>
                 <p>
-                  Nuestra filosofía se basa en la integración de tradiciones ancestrales con enfoques contemporáneos de bienestar. Cada ceremonia, cada meditación, cada encuentro está diseñado para crear un puente entre la sabiduría antigua y tu vida moderna.
+                  Es también un espacio seguro y respetuoso para el trabajo con plantas de poder, entendidas como medicina natural y herramientas ancestrales de conciencia, siempre abordadas con intención, cuidado y guía.
                 </p>
                 <p>
-                  En este espacio sagrado, el amor es la medicina principal. Te acompañamos con profesionalismo, seguridad y una profunda comprensión de que cada ser humano lleva dentro la capacidad de transformarse.
+                  En Casa Soul of Love se puede asistir de manera individual, en pareja o en grupo, ya sea para vivir sesiones personalizadas o para participar en ceremonias con fechas específicas que se realizan cada mes. Es un hogar espiritual donde la comunidad, la contención y la conexión se viven como experiencia real, permitiendo soltar el piloto automático y abrirse a una forma más consciente y plena de habitar la vida.
                 </p>
               </div>
 
