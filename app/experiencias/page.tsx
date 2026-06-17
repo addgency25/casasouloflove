@@ -14,9 +14,12 @@ type Ceremony = {
   title: string
   subtitle: string | null
   image?: string
+  imageRotate?: boolean
   queEs: string
+  queEsExtra?: { text: string; italic?: boolean }[]
   incluye?: string[]
   esperar: string[]
+  esperarIntro?: string
   note?: string
   idealPara?: string[]
   accentLine?: string | string[]
@@ -122,17 +125,43 @@ const plantasDePoder: Ceremony[] = [
   },
   {
     label: "Ceremonia Sagrada",
-    title: "Awakening in Amor: Xanga DMT",
+    title: "Awakening in Amor: Sacred Plants Xanga DMT",
     subtitle: null,
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0302-qoEURKMeSHa5lmLeRMrpWqbDnAB6u5.jpg",
+    imageRotate: true,
     queEs:
-      "Ceremonia de apertura del corazón con Xanga (Rapé + DMT). Una experiencia intensa y breve que te conecta con el amor incondicional y la conciencia expandida. El viaje dura minutos pero su impacto resuena por semanas.",
-    esperar: [
-      "Una apertura profunda del centro del corazón",
-      "Visiones, claridad y conexión con tu esencia más pura",
-      "Acompañamiento total de Norge durante todo el proceso",
-      "Un antes y un después en tu camino espiritual",
+      "Una ceremonia guiada con plantas sagradas utilizadas como herramientas de conexión con el astral y nuevas dimensiones. Un viaje de apertura del corazón, expansión de conciencia y conexión espiritual. Apertura profunda del 3er ojo para ver y sentir más allá de esta realidad.",
+    queEsExtra: [
+      {
+        text: "Xanga es una medicina de viaje corto, pero de profundidad inmensa. Es femenina. Amorosa. Envolvente. Trabaja a través de la glándula pineal, activando tu propio DMT de forma inmediata — por eso el viaje es directo y concentrado. Esta molécula y ese estado de alivio quedará activa en ti de 20 a 30 días dependiendo de tus hábitos.",
+        italic: true,
+      },
+      {
+        text: "Aunque activa el tercer ojo y te expande la visión y el propósito de vida, su verdadera fuerza está en el corazón y en hacerte sentir con certeza que lo más importante es el amor propio.",
+      },
     ],
-    details: "2-3 horas · Presencial Miami · Evaluación previa requerida",
+    incluye: [
+      "Ritual de rapé para balancear las energías y entrar con más valentía al encuentro con la grandeza de la existencia y de tu alma",
+      "Meditación guiada para tener más claridad sobre tu intención",
+      "Acompañamiento constante de Norge durante el viaje",
+    ],
+    esperarIntro: "Es una experiencia intensa, pero sostenida con cuidado, respeto y Amor.",
+    esperar: [
+      "Apertura profunda del corazón",
+      "Amor propio",
+      "Bienestar físico, emocional y mental",
+      "Visiones de ancestros, ángeles o dimensiones internas",
+      "Reconocimiento de otras versiones de ti",
+    ],
+    idealPara: [
+      "Personas que están pasando por procesos emocionales profundos",
+      "Tránsitos de duelos",
+      "Respuestas a las preguntas del alma que no se encuentran en libros",
+      "Baja autoestima",
+      "Quienes buscan propósito de vida",
+      "Si quieres cambios de perspectiva de la vida",
+    ],
+    details: "2-3 horas · Presencial Miami · Entrevista previa requerida",
   },
   {
     label: "Experiencia Avanzada",
@@ -195,12 +224,26 @@ export default function ExperienciasPage() {
                     <div className={imageLeft ? "lg:order-1" : "lg:order-2"}>
                       <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-forest flex items-center justify-center p-8">
                         {ceremony.image ? (
-                          <img
-                            src={ceremony.image || "/placeholder.svg"}
-                            alt={ceremony.title}
-                            className="absolute inset-0 w-full h-full object-cover"
-                            style={{ objectPosition: "center center" }}
-                          />
+                          ceremony.imageRotate ? (
+                            <img
+                              src={ceremony.image || "/placeholder.svg"}
+                              alt={ceremony.title}
+                              className="absolute top-1/2 left-1/2 object-cover"
+                              style={{
+                                width: "75%",
+                                height: "133.333%",
+                                objectPosition: "center center",
+                                transform: "translate(-50%, -50%) rotate(-90deg)",
+                              }}
+                            />
+                          ) : (
+                            <img
+                              src={ceremony.image || "/placeholder.svg"}
+                              alt={ceremony.title}
+                              className="absolute inset-0 w-full h-full object-cover"
+                              style={{ objectPosition: "center center" }}
+                            />
+                          )
                         ) : (
                           <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
                             {ceremony.title}
@@ -226,6 +269,18 @@ export default function ExperienciasPage() {
                       <div className="mt-6">
                         <h4 className="text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-2">¿Qué es?</h4>
                         <p className="text-charcoal/70 leading-relaxed">{ceremony.queEs}</p>
+                        {ceremony.queEsExtra?.map((para) => (
+                          <p
+                            key={para.text}
+                            className={
+                              para.italic
+                                ? "font-serif italic text-charcoal/60 leading-relaxed mt-4"
+                                : "text-charcoal/70 leading-relaxed mt-4"
+                            }
+                          >
+                            {para.text}
+                          </p>
+                        ))}
                       </div>
 
                       {ceremony.incluye && (
@@ -246,6 +301,11 @@ export default function ExperienciasPage() {
                         <h4 className={ceremony.incluye ? "font-serif italic text-olive text-[1.1rem] mb-3" : "text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-3"}>
                           {ceremony.incluye ? "¿Qué puedes experimentar?" : "¿Qué puedes esperar?"}
                         </h4>
+                        {ceremony.esperarIntro && (
+                          <p className="font-serif italic text-charcoal/60 leading-relaxed mb-3">
+                            {ceremony.esperarIntro}
+                          </p>
+                        )}
                         <ul className="flex flex-col gap-2">
                           {ceremony.esperar.map((item) => (
                             <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
