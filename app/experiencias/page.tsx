@@ -93,7 +93,7 @@ const plantasDePoder: Ceremony[] = [
   },
   {
     label: "Limpieza Energética",
-    title: "Limpieza y Balance —",
+    title: "Limpieza y Balance",
     subtitle: null,
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC00271.JPG-BC01b6qlIXqOnf4BjU7rkdnKyn9TSd.jpeg",
@@ -166,7 +166,6 @@ const plantasDePoder: Ceremony[] = [
   },
   {
     label: "Experiencia Avanzada",
-    label: "Experiencia Avanzada",
     title: "Samadhi (La Aya Mexicana) DMT & IMAO",
     subtitle: "Medicina Visionaria de Profundidad",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0205-X5HhHl67JLC4LcBOZsURdlTvuHhy4K.jpg",
@@ -226,184 +225,175 @@ export default function ExperienciasPage() {
       />
 
       {/* Plantas de Poder - Immersive alternating sections */}
-      <section id="plantas" className="bg-cream py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-20 text-center max-w-2xl mx-auto">
-            <span className="section-label mb-4 block">Ceremonias</span>
-            <h2 className="font-serif font-light text-charcoal">
-              Plantas de <em className="italic">Poder</em> &mdash;
-            </h2>
-            <p className="text-charcoal/60 mt-6 leading-relaxed">
-              Cada ceremonia es un viaje único de sanación y expansión, sostenido con amor y profesionalismo por Norge en un espacio sagrado y seguro.
-            </p>
-          </div>
-
-          <div className="space-y-20 lg:space-y-28">
-            {plantasDePoder.map((ceremony, index) => {
-              const imageLeft = index % 2 === 0
-              return (
-                <div key={ceremony.title}>
-                  <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                    {/* Image area */}
-                    <div className={imageLeft ? "lg:order-1" : "lg:order-2"}>
-                      <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-forest flex items-center justify-center p-8">
-                        {ceremony.image ? (
-                          ceremony.imageRotate ? (
-                            <img
-                              src={ceremony.image || "/placeholder.svg"}
-                              alt={ceremony.title}
-                              className="absolute top-1/2 left-1/2 object-cover"
-                              style={{
-                                width: "75%",
-                                height: "133.333%",
-                                objectPosition: "center center",
-                                transform: "translate(-50%, -50%) rotate(-90deg)",
-                              }}
-                            />
-                          ) : (
-                            <img
-                              src={ceremony.image || "/placeholder.svg"}
-                              alt={ceremony.title}
-                              className="absolute inset-0 w-full h-full object-cover"
-                              style={{ objectPosition: "center center" }}
-                            />
-                          )
-                        ) : (
-                          <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
-                            {ceremony.title}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Text area */}
-                    <div className={imageLeft ? "lg:order-2" : "lg:order-1"}>
-                      <span className="text-[11px] uppercase tracking-[0.25em] text-olive font-medium mb-4 block">
-                        {ceremony.label}
-                      </span>
-                      <h3 className="font-serif font-light text-charcoal text-3xl lg:text-4xl leading-tight">
-                        {ceremony.title} &mdash;
-                      </h3>
-                      {ceremony.subtitle && (
-                        <p className="font-serif italic text-olive text-lg mt-1">
-                          {ceremony.subtitle}
-                        </p>
-                      )}
-
-                      <div className="mt-6">
-                        <h4 className="text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-2">¿Qué es?</h4>
-                        <p className="text-charcoal/70 leading-relaxed">{ceremony.queEs}</p>
-                        {ceremony.queEsExtra?.map((para) => (
-                          <p
-                            key={para.text}
-                            className={
-                              para.italic
-                                ? "font-serif italic text-charcoal/60 leading-relaxed mt-4"
-                                : "text-charcoal/70 leading-relaxed mt-4"
-                            }
-                          >
-                            {para.text}
-                          </p>
-                        ))}
-                      </div>
-
-                      {ceremony.incluye && (
-                        <div className="mb-6 mt-6">
-                          <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">¿Qué incluye?</h4>
-                          <ul className="flex flex-col gap-2">
-                            {ceremony.incluye.map((item) => (
-                              <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
-                                <span className="text-olive shrink-0">&rarr;</span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      <div className="mb-6 mt-6">
-                        <h4 className={ceremony.incluye ? "font-serif italic text-olive text-[1.1rem] mb-3" : "text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-3"}>
-                          {ceremony.incluye ? "¿Qué puedes experimentar?" : "¿Qué puedes esperar?"}
-                        </h4>
-                        {ceremony.esperarIntro && (
-                          <p className="font-serif italic text-charcoal/60 leading-relaxed mb-3">
-                            {ceremony.esperarIntro}
-                          </p>
-                        )}
-                        <ul className="flex flex-col gap-2">
-                          {ceremony.esperar.map((item) => (
-                            <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
-                              <span className="text-olive shrink-0">&rarr;</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {ceremony.note && (
-                        <p className="font-serif italic text-charcoal/50 text-sm leading-relaxed mb-6">
-                          {ceremony.note}
-                        </p>
-                      )}
-
-                      {ceremony.idealPara && (
-                        <div className="mb-6">
-                          <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">Ideal para:</h4>
-                          <ul className="flex flex-col gap-2">
-                            {ceremony.idealPara.map((item) => (
-                              <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
-                                <span className="text-olive shrink-0">&rarr;</span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {ceremony.accentLine &&
-                        (Array.isArray(ceremony.accentLine) ? ceremony.accentLine : [ceremony.accentLine]).map(
-                          (line) => (
-                            <p
-                              key={line}
-                              className="font-serif italic text-olive text-[1.1rem] leading-relaxed mb-6"
-                            >
-                              {line}
-                            </p>
-                          ),
-                        )}
-
-                      {ceremony.finalNote && (
-                        <p className="font-serif italic text-charcoal/60 leading-relaxed mb-6">
-                          {ceremony.finalNote}
-                        </p>
-                      )}
-
-                      <p className="mt-6 text-sm text-charcoal/50">{ceremony.details}</p>
-
-                      <div className="mt-6">
-                        <a
-                          href={WHATSAPP_LINK}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-outline"
-                        >
-                          Reservar por WhatsApp &rarr;
-                        </a>
-                        <p className="text-[0.7rem] text-charcoal/40 mt-2">Disponible grupal o individual</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Divider between ceremonies */}
-                  {index < plantasDePoder.length - 1 && (
-                    <div className="mx-auto max-w-xs h-px mt-20 lg:mt-28" style={{ backgroundColor: "rgba(57, 64, 33, 0.1)" }} />
-                  )}
-                </div>
-              )
-            })}
-          </div>
+      <section id="plantas" className="bg-cream pt-24 lg:pt-32 pb-8">
+        <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <span className="section-label mb-4 block">Ceremonias</span>
+          <h2 className="font-serif font-light text-charcoal">
+            Plantas de <em className="italic">Poder</em> &mdash;
+          </h2>
+          <p className="text-charcoal/60 mt-6 leading-relaxed">
+            Cada ceremonia es un viaje único de sanación y expansión, sostenido con amor y profesionalismo por Norge en un espacio sagrado y seguro.
+          </p>
         </div>
       </section>
+
+      {plantasDePoder.map((ceremony, index) => {
+        const imageLeft = index % 2 === 0
+        const bandBg = index % 2 === 0 ? "bg-cream" : "bg-cream-warm"
+        return (
+          <section key={ceremony.title} className={`${bandBg} py-16 lg:py-24`}>
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Image area */}
+                <div className={imageLeft ? "lg:order-1" : "lg:order-2"}>
+                  {ceremony.image ? (
+                    ceremony.imageRotate ? (
+                      <div className="w-full aspect-[4/3] rounded-sm overflow-hidden">
+                        <img
+                          src={ceremony.image || "/placeholder.svg"}
+                          alt={ceremony.title}
+                          className="w-full h-full object-cover"
+                          style={{ transform: "rotate(-90deg) scale(1.333)" }}
+                        />
+                      </div>
+                    ) : (
+                      <img
+                        src={ceremony.image || "/placeholder.svg"}
+                        alt={ceremony.title}
+                        className="w-full aspect-[4/3] object-cover rounded-sm"
+                      />
+                    )
+                  ) : (
+                    <div className="w-full aspect-[4/3] rounded-sm bg-forest flex items-center justify-center p-8">
+                      <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
+                        {ceremony.title}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Text area */}
+                <div className={imageLeft ? "lg:order-2" : "lg:order-1"}>
+                  <span className="text-[11px] uppercase tracking-[0.25em] text-olive font-medium mb-4 block">
+                    {ceremony.label}
+                  </span>
+                  <h3 className="font-serif font-light text-charcoal text-3xl lg:text-4xl leading-tight">
+                    {ceremony.title}
+                  </h3>
+                  {ceremony.subtitle && (
+                    <p className="font-serif italic text-olive text-lg mt-1">{ceremony.subtitle}</p>
+                  )}
+
+                  <div className="mb-6 mt-6">
+                    <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">¿Qué es?</h4>
+                    <p className="text-charcoal/70 leading-relaxed">{ceremony.queEs}</p>
+                    {ceremony.queEsExtra?.map((para) => (
+                      <p
+                        key={para.text}
+                        className={
+                          para.italic
+                            ? "font-serif italic text-charcoal/60 leading-relaxed mt-4"
+                            : "text-charcoal/70 leading-relaxed mt-4"
+                        }
+                      >
+                        {para.text}
+                      </p>
+                    ))}
+                  </div>
+
+                  {ceremony.incluye && (
+                    <div className="mb-6">
+                      <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">¿Qué incluye?</h4>
+                      <ul className="flex flex-col gap-2">
+                        {ceremony.incluye.map((item) => (
+                          <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
+                            <span className="text-olive shrink-0">&rarr;</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div className="mb-6">
+                    <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">
+                      {ceremony.incluye ? "¿Qué puedes experimentar?" : "¿Qué puedes esperar?"}
+                    </h4>
+                    {ceremony.esperarIntro && (
+                      <p className="font-serif italic text-charcoal/60 leading-relaxed mb-3">
+                        {ceremony.esperarIntro}
+                      </p>
+                    )}
+                    <ul className="flex flex-col gap-2">
+                      {ceremony.esperar.map((item) => (
+                        <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
+                          <span className="text-olive shrink-0">&rarr;</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {ceremony.note && (
+                    <p className="font-serif italic text-charcoal/50 text-sm leading-relaxed mb-6">
+                      {ceremony.note}
+                    </p>
+                  )}
+
+                  {ceremony.idealPara && (
+                    <div className="mb-6">
+                      <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">Ideal para:</h4>
+                      <ul className="flex flex-col gap-2">
+                        {ceremony.idealPara.map((item) => (
+                          <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
+                            <span className="text-olive shrink-0">&rarr;</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {ceremony.accentLine &&
+                    (Array.isArray(ceremony.accentLine) ? ceremony.accentLine : [ceremony.accentLine]).map(
+                      (line) => (
+                        <p
+                          key={line}
+                          className="font-serif italic text-olive text-[1.1rem] leading-relaxed mb-6"
+                        >
+                          {line}
+                        </p>
+                      ),
+                    )}
+
+                  {ceremony.finalNote && (
+                    <p className="font-serif italic text-charcoal/60 leading-relaxed mb-6">
+                      {ceremony.finalNote}
+                    </p>
+                  )}
+
+                  <p className="mb-6 text-sm text-charcoal/50">{ceremony.details}</p>
+
+                  <div>
+                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-outline">
+                      Reservar por WhatsApp &rarr;
+                    </a>
+                    <p className="text-[0.7rem] text-charcoal/40 mt-2">Disponible grupal o individual</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Divider between ceremonies */}
+              {index < plantasDePoder.length - 1 && (
+                <div
+                  className="mx-auto max-w-xs h-px mt-16 lg:mt-24"
+                  style={{ backgroundColor: "rgba(57, 64, 33, 0.1)" }}
+                />
+              )}
+            </div>
+          </section>
+        )
+      })}
 
       {/* Meditaciones Presenciales - Forest background with list layout */}
       <section id="presenciales" className="bg-forest py-24 lg:py-32">
