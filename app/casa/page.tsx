@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/page-hero"
+import { NorgeVideo } from "@/components/norge-video"
 import Link from "next/link"
 
 export const metadata = {
@@ -119,15 +120,21 @@ export default function CasaPage() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left: Overlapping images */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[3/4] bg-sage w-[80%]">
-                <span className="absolute inset-0 flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Sacred Space
-                </span>
+              <div className="relative aspect-[3/4] bg-sage w-[80%] overflow-hidden">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1159-WwgE7qib0jb02GCmmuiG5RVBLf6mRv.jpg"
+                  alt="Camino de piedra que conduce a la casa de Casa Soul of Love, rodeado de césped verde y un gran árbol"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "center 40%", filter: "saturate(0.9) sepia(0.05)" }}
+                />
               </div>
-              <div className="absolute -bottom-8 -right-4 lg:right-0 w-[50%] aspect-square bg-olive">
-                <span className="absolute inset-0 flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Detail
-                </span>
+              <div className="absolute -bottom-8 -right-4 lg:right-0 w-[50%] aspect-square bg-olive overflow-hidden">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0352-kCprAnrvw4ua0Wkxz5krjrI6scAuoZ.jpg"
+                  alt="Persona descansando con antifaz durante una ceremonia en un espacio íntimo y sereno"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: "center center", filter: "saturate(0.9) sepia(0.05)" }}
+                />
               </div>
             </div>
 
@@ -139,13 +146,13 @@ export default function CasaPage() {
               </h2>
               <div className="space-y-5 text-charcoal/70 leading-[1.8] mb-10 max-w-xl">
                 <p>
-                  Casa Soul of Love es más que un espacio físico; es un santuario donde las almas vienen a recordar su verdadera naturaleza. Aquí, creemos que la sanación no es un destino, sino un viaje de regreso a ti mismo.
+                  Casa Soul of Love es un espacio sagrado de encuentro, transformación y cuidado, creado para acompañar procesos de autoconocimiento, sanación y expansión de conciencia. Es un refugio donde la meditación, las ceremonias y las experiencias grupales se integran en un entorno amoroso y contenido, pensado para que cada persona pueda reconectar con su esencia y generar cambios significativos desde un lugar profundo y auténtico.
                 </p>
                 <p>
-                  Nuestra filosofía se basa en la integración de tradiciones ancestrales con enfoques contemporáneos de bienestar. Cada ceremonia, cada meditación, cada encuentro está diseñado para crear un puente entre la sabiduría antigua y tu vida moderna.
+                  Es también un espacio seguro y respetuoso para el trabajo con plantas de poder, entendidas como medicina natural y herramientas ancestrales de conciencia, siempre abordadas con intención, cuidado y guía.
                 </p>
                 <p>
-                  En este espacio sagrado, el amor es la medicina principal. Te acompañamos con profesionalismo, seguridad y una profunda comprensión de que cada ser humano lleva dentro la capacidad de transformarse.
+                  En Casa Soul of Love se puede asistir de manera individual, en pareja o en grupo, ya sea para vivir sesiones personalizadas o para participar en ceremonias con fechas específicas que se realizan cada mes. Es un hogar espiritual donde la comunidad, la contención y la conexión se viven como experiencia real, permitiendo soltar el piloto automático y abrirse a una forma más consciente y plena de habitar la vida.
                 </p>
               </div>
 
@@ -185,10 +192,19 @@ export default function CasaPage() {
 
               <div className="space-y-5 text-charcoal/70 leading-[1.8] mb-10 max-w-xl">
                 <p>
-                  Mi camino hacia la facilitación de ceremonias comenzó hace más de 8 años, cuando experimenté mi propia transformación profunda. Desde entonces, he dedicado mi vida a crear espacios seguros donde otros puedan vivir su propia sanación.
+                  Guía de experiencias visionarias y expansión de conciencia, camino conscientemente en este sendero espiritual desde el año 2008. He guiado a más de 3.000 personas en experiencias que requieren presencia, responsabilidad y sostén real, creando espacios sagrados donde el estado del SER se vuelve posible.
                 </p>
                 <p>
-                  Hasta ahora, he tenido el honor de acompañar a más de 500 almas en su proceso de transformación. Cada una me ha enseñado algo nuevo sobre la profundidad del ser humano.
+                  Mi trabajo integra rituales, meditación y la sabiduría de plantas ancestrales de poder, siempre enraizado en la presencia, el amor, la sutileza y el respeto por cada proceso.
+                </p>
+                <p>
+                  Creo profundamente que la verdadera sanación comienza cuando regresamos al cuerpo, cuando abrimos el corazón, sentimos y recordamos que ya somos completos.
+                </p>
+                <p>
+                  No guío para que dependan de mí. Guío para que vuelvan a su propia verdad, autenticidad y amor propio.
+                </p>
+                <p>
+                  Sostengo espacios donde la suavidad es fuerza y la claridad es poder. Y esto nace de la experiencia, la práctica y el respeto por cada experiencia que comparto.
                 </p>
               </div>
               
@@ -197,13 +213,9 @@ export default function CasaPage() {
               </Link>
             </div>
 
-            {/* Portrait image - bleeding to edge */}
+            {/* Portrait video - bleeding to edge */}
             <div className="lg:col-span-5 order-1 lg:order-2">
-              <div className="aspect-[3/4] bg-terracotta lg:-mr-8">
-                <span className="h-full flex items-center justify-center text-cream/40 text-xs uppercase tracking-widest">
-                  Portrait of Norge
-                </span>
-              </div>
+              <NorgeVideo />
             </div>
           </div>
         </div>

@@ -9,62 +9,197 @@ export const metadata = {
 
 const WHATSAPP_LINK = "https://wa.me/1XXXXXXXXXX"
 
-const plantasDePoder = [
+type Ceremony = {
+  label: string
+  title: string
+  subtitle: string | null
+  image?: string
+  imageRotate?: boolean
+  queEs: string
+  queEsExtra?: { text: string; italic?: boolean }[]
+  incluye?: string[]
+  esperar: string[]
+  esperarIntro?: string
+  note?: string
+  idealPara?: string[]
+  accentLine?: string | string[]
+  finalNote?: string
+  details: string
+}
+
+const plantasDePoder: Ceremony[] = [
   {
     label: "Microdosis",
     title: "Microdosis Mushroom Meditation",
     subtitle: null,
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b1fe8f02-e187-47f5-bd5a-50a6f25b8c4c%20%282%29-Bq2aw0AbF2Jj8dPORslUEW8Ag57ZMj.jpg",
     queEs:
-      "Sesiones de meditación guiada potenciadas con microdosis de psilocibina. Una experiencia sutil pero profunda que te permite acceder a estados expandidos de conciencia mientras mantienes total claridad y presencia.",
-    esperar: [
-      "Claridad mental y conexión profunda contigo mismo",
-      "Meditación guiada por Norge en un espacio íntimo y seguro",
-      "Integración y reflexión al cierre de la sesión",
-      "Un estado de apertura suave, sin perder el control",
+      "Una meditación guiada con dosis suaves, enfocada en la presencia, la sensibilidad y la conexión consciente. Su enfoque se basa en abrir la percepción de manera sutil, mejorar la conexión emocional y el bienestar sin alterar el estado.",
+    incluye: [
+      "0.5 g de psilocibina — se escoge el tipo de hongo dependiendo de la necesidad de la persona",
+      "Ritual de rapé para centrar, calmar y bajar la bulla de los pensamientos",
+      "Meditación guiada",
+      "Sonidos terapéuticos",
+      "Acompañamiento cercano de Norge",
     ],
-    details: "2-3 horas · Presencial Miami · Máx. 8 personas",
+    esperar: [
+      "Relajación profunda, presencia, alivio",
+      "Claridad mental",
+      "Respuestas internas sutiles",
+      "Sensación de conexión nunca antes experimentada",
+      "Calma emocional",
+    ],
+    note: "No es una ceremonia expansiva. Es un espacio contenido y consciente para acercarte con suavidad.",
+    idealPara: [
+      'Personas con curiosidad pero con miedo a "ir muy profundo"',
+      "Quienes buscan relajarse, reconectar y sentir estas herramientas naturales de poder con suavidad",
+      "Quienes desean comenzar su camino con suavidad",
+    ],
+    details: "2-3 horas · Presencial Miami · Grupal o individual",
   },
   {
     label: "Macrodosis",
-    title: "Macrodosis Mushroom: Limpieza y Balance",
+    title: "Macrodosis Mushroom Meditation",
     subtitle: null,
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4531%20%281%29-Gw7mirHRfQskzW9SX1NpefUaJejd3t.jpg",
     queEs:
-      "Ceremonia de sanación profunda con dosis completas de psilocibina. Un viaje interior de limpieza emocional y reequilibrio energético, facilitado por Norge en un ambiente seguro, sagrado y completamente sostenido.",
-    esperar: [
-      "Una experiencia transformadora de soltar lo que ya no sirve",
-      "Acompañamiento profesional durante todo el proceso",
-      "Música ceremonial, aromaterapia y contención amorosa",
-      "Sesión de integración posterior incluida",
+      "Una experiencia meditativa profunda, guiada y contenida, diseñada para explorar estados expandidos de conciencia en ceremonia de larga duración. Apunta a la introspección, la apertura emocional, la percepción ampliada y el contacto con capas más profundas del sentir.",
+    incluye: [
+      "Dosis personalizada de psilocibina, desde 2 gramos hasta 10 gramos",
+      "Ritual de rapé para abrir el espacio y recibir en calma este viaje a tu interior",
+      "Preparación e intención consciente",
+      "Meditación guiada",
+      "Sonido terapéutico",
+      "Acompañamiento cercano durante todo el proceso",
+      "Integración y cierre consciente",
     ],
-    details: "5-6 horas · Presencial Miami · Entrevista previa requerida",
+    esperar: [
+      "Expansión emocional",
+      "Liberación profunda",
+      "Comprensiones claras y cambios de percepción de vida",
+      "Reconexión con tu esencia, visiones de otras dimensiones o espacios",
+      "Apertura del corazón",
+    ],
+    note: "Cada viaje es único. Yo sostengo el espacio para que puedas entregarte con confianza, sintiéndote protegido y amado.",
+    idealPara: [
+      "Personas que estén listas para ir bien profundo y sostener una gran expansión de conciencia — esto es un antes y un después",
+      "Procesos de transición por pérdidas, o búsqueda de superar traumas de esta vida, ancestrales o de vidas pasadas",
+      "Quienes desean transformación real, no solo relajación — aquí no es para escapar, es recordar, sentir y sanar",
+    ],
+    accentLine: "Si estás lista/o para cruzar el umbral, este es el portal.",
+    details: "5-8 horas · Presencial Miami · Entrevista previa requerida",
+  },
+  {
+    label: "Limpieza Energética",
+    title: "Limpieza y Balance —",
+    subtitle: null,
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC00271.JPG-BC01b6qlIXqOnf4BjU7rkdnKyn9TSd.jpeg",
+    queEs:
+      "Una experiencia integral de renovación e higiene espiritual. Es equilibrio interno — muchas personas describen la sensación como si se quitaran kilos de emociones acumuladas. Sin llevarte tan lejos, te trae de vuelta a la presencia, y desde ese silencio, vuelves a tomar tu fuerza.",
+    incluye: [
+      "Rapé (abuelo tabaco y otras plantas pulverizadas)",
+      "Meditación guiada",
+      "Sound Healing con cuencos de cristal y sonidos chamánicos",
+    ],
+    esperar: [
+      "Presencia real de tu cuerpo, mente y alma",
+      "Silencio mental profundo",
+      "Enraizamiento",
+      "Claridad emocional",
+      "Sensación de empoderamiento",
+      "Alivio físico y energético",
+    ],
+    accentLine: [
+      "Entras con ruido, sales con claridad. Entras preocupado, sales más liviano.",
+      "No hay visiones como en otras medicinas. Si llegan, son un regalo, no la intención. A esta planta la llaman la mensajera, por abrir canales al calmar la mente y conectar con la sabiduría universal creadora.",
+    ],
+    idealPara: [
+      "Personas con ansiedad o exceso de pensamientos",
+      "Momentos de decisión",
+      "Antes de un cambio importante",
+      "Como preparación para otras ceremonias",
+    ],
+    details: "2-3 horas · Presencial Miami · Grupal o individual",
   },
   {
     label: "Ceremonia Sagrada",
-    title: "Awakening in Amor: Xanga DMT",
+    title: "Awakening in Amor: Sacred Plants Xanga DMT",
     subtitle: null,
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0302-qoEURKMeSHa5lmLeRMrpWqbDnAB6u5.jpg",
+    imageRotate: true,
     queEs:
-      "Ceremonia de apertura del corazón con Xanga (Rapé + DMT). Una experiencia intensa y breve que te conecta con el amor incondicional y la conciencia expandida. El viaje dura minutos pero su impacto resuena por semanas.",
-    esperar: [
-      "Una apertura profunda del centro del corazón",
-      "Visiones, claridad y conexión con tu esencia más pura",
-      "Acompañamiento total de Norge durante todo el proceso",
-      "Un antes y un después en tu camino espiritual",
+      "Una ceremonia guiada con plantas sagradas utilizadas como herramientas de conexión con el astral y nuevas dimensiones. Un viaje de apertura del corazón, expansión de conciencia y conexión espiritual. Apertura profunda del 3er ojo para ver y sentir más allá de esta realidad.",
+    queEsExtra: [
+      {
+        text: "Xanga es una medicina de viaje corto, pero de profundidad inmensa. Es femenina. Amorosa. Envolvente. Trabaja a través de la glándula pineal, activando tu propio DMT de forma inmediata — por eso el viaje es directo y concentrado. Esta molécula y ese estado de alivio quedará activa en ti de 20 a 30 días dependiendo de tus hábitos.",
+        italic: true,
+      },
+      {
+        text: "Aunque activa el tercer ojo y te expande la visión y el propósito de vida, su verdadera fuerza está en el corazón y en hacerte sentir con certeza que lo más importante es el amor propio.",
+      },
     ],
-    details: "2-3 horas · Presencial Miami · Evaluación previa requerida",
+    incluye: [
+      "Ritual de rapé para balancear las energías y entrar con más valentía al encuentro con la grandeza de la existencia y de tu alma",
+      "Meditación guiada para tener más claridad sobre tu intención",
+      "Acompañamiento constante de Norge durante el viaje",
+    ],
+    esperarIntro: "Es una experiencia intensa, pero sostenida con cuidado, respeto y Amor.",
+    esperar: [
+      "Apertura profunda del corazón",
+      "Amor propio",
+      "Bienestar físico, emocional y mental",
+      "Visiones de ancestros, ángeles o dimensiones internas",
+      "Reconocimiento de otras versiones de ti",
+    ],
+    idealPara: [
+      "Personas que están pasando por procesos emocionales profundos",
+      "Tránsitos de duelos",
+      "Respuestas a las preguntas del alma que no se encuentran en libros",
+      "Baja autoestima",
+      "Quienes buscan propósito de vida",
+      "Si quieres cambios de perspectiva de la vida",
+    ],
+    details: "2-3 horas · Presencial Miami · Entrevista previa requerida",
   },
   {
     label: "Experiencia Avanzada",
-    title: "Samadhi DMT",
-    subtitle: "Aya Mexicana",
+    label: "Experiencia Avanzada",
+    title: "Samadhi (La Aya Mexicana) DMT & IMAO",
+    subtitle: "Medicina Visionaria de Profundidad",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0205-X5HhHl67JLC4LcBOZsURdlTvuHhy4K.jpg",
     queEs:
-      "La experiencia más profunda de Casa Soul of Love. Samadhi utiliza DMT en formato de Ayahuasca Mexicana, ofreciendo un viaje de disolución del ego y reconexión con la fuente. Reservada para quienes ya han transitado experiencias previas con plantas de poder.",
-    esperar: [
-      "Disolución temporal del ego y expansión total de conciencia",
-      "Encuentro profundo con tu ser esencial",
-      "Espacio ceremonial sagrado con música y guía constante",
-      "Integración extendida con Norge post-ceremonia",
+      "Samadhi es una experiencia ceremonial de larga duración. Se recibe en cápsulas y el viaje puede extenderse por horas. Contiene moléculas similares a la Ayahuasca.",
+    queEsExtra: [
+      {
+        text: "Es una medicina de presencia constante: silenciosa, contemplativa y profundamente reveladora. Es un proceso sostenido entre conciencia, mente, corazón y espíritu. Samadhi trabaja en capas internas, permitiendo que emerjan comprensiones que antes parecían confusas o difíciles.",
+      },
     ],
-    details: "6-8 horas · Presencial Miami · Entrevista previa requerida",
+    incluye: [
+      "Día completo de ceremonia",
+      "Ritual de rapé para limpieza y centrado",
+      "Meditación de intención",
+      "Acompañamiento continuo durante todo el proceso",
+      "Espacio seguro y contención",
+    ],
+    esperar: [
+      "Conexión espiritual profunda",
+      "Sensación de guía o presencia sutil de entidades celestiales",
+      "Visiones reveladoras",
+      "Silencio interno claro",
+      "Entendimientos que continúan días después",
+      "Nueva perspectiva sobre situaciones personales",
+    ],
+    idealPara: [
+      "Personas que buscan respuestas profundas en situaciones emocionales",
+      "Procesos de transformación interna significativa",
+      "Quienes están listas/os para una expansión de conciencia sostenida",
+      "Momentos de transición o búsqueda espiritual seria",
+    ],
+    finalNote: "Requiere preparación y entrevista previa.",
+    details: "6-10 horas · Presencial Miami · Entrevista previa requerida",
   },
 ]
 
@@ -112,9 +247,32 @@ export default function ExperienciasPage() {
                     {/* Image area */}
                     <div className={imageLeft ? "lg:order-1" : "lg:order-2"}>
                       <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-forest flex items-center justify-center p-8">
-                        <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
-                          {ceremony.title}
-                        </span>
+                        {ceremony.image ? (
+                          ceremony.imageRotate ? (
+                            <img
+                              src={ceremony.image || "/placeholder.svg"}
+                              alt={ceremony.title}
+                              className="absolute top-1/2 left-1/2 object-cover"
+                              style={{
+                                width: "75%",
+                                height: "133.333%",
+                                objectPosition: "center center",
+                                transform: "translate(-50%, -50%) rotate(-90deg)",
+                              }}
+                            />
+                          ) : (
+                            <img
+                              src={ceremony.image || "/placeholder.svg"}
+                              alt={ceremony.title}
+                              className="absolute inset-0 w-full h-full object-cover"
+                              style={{ objectPosition: "center center" }}
+                            />
+                          )
+                        ) : (
+                          <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
+                            {ceremony.title}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -127,7 +285,7 @@ export default function ExperienciasPage() {
                         {ceremony.title} &mdash;
                       </h3>
                       {ceremony.subtitle && (
-                        <p className="font-serif italic text-charcoal/50 text-lg mt-1">
+                        <p className="font-serif italic text-olive text-lg mt-1">
                           {ceremony.subtitle}
                         </p>
                       )}
@@ -135,10 +293,43 @@ export default function ExperienciasPage() {
                       <div className="mt-6">
                         <h4 className="text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-2">¿Qué es?</h4>
                         <p className="text-charcoal/70 leading-relaxed">{ceremony.queEs}</p>
+                        {ceremony.queEsExtra?.map((para) => (
+                          <p
+                            key={para.text}
+                            className={
+                              para.italic
+                                ? "font-serif italic text-charcoal/60 leading-relaxed mt-4"
+                                : "text-charcoal/70 leading-relaxed mt-4"
+                            }
+                          >
+                            {para.text}
+                          </p>
+                        ))}
                       </div>
 
-                      <div className="mt-6">
-                        <h4 className="text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-3">¿Qué puedes esperar?</h4>
+                      {ceremony.incluye && (
+                        <div className="mb-6 mt-6">
+                          <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">¿Qué incluye?</h4>
+                          <ul className="flex flex-col gap-2">
+                            {ceremony.incluye.map((item) => (
+                              <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
+                                <span className="text-olive shrink-0">&rarr;</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      <div className="mb-6 mt-6">
+                        <h4 className={ceremony.incluye ? "font-serif italic text-olive text-[1.1rem] mb-3" : "text-xs uppercase tracking-[0.15em] text-charcoal/40 mb-3"}>
+                          {ceremony.incluye ? "¿Qué puedes experimentar?" : "¿Qué puedes esperar?"}
+                        </h4>
+                        {ceremony.esperarIntro && (
+                          <p className="font-serif italic text-charcoal/60 leading-relaxed mb-3">
+                            {ceremony.esperarIntro}
+                          </p>
+                        )}
                         <ul className="flex flex-col gap-2">
                           {ceremony.esperar.map((item) => (
                             <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
@@ -148,6 +339,44 @@ export default function ExperienciasPage() {
                           ))}
                         </ul>
                       </div>
+
+                      {ceremony.note && (
+                        <p className="font-serif italic text-charcoal/50 text-sm leading-relaxed mb-6">
+                          {ceremony.note}
+                        </p>
+                      )}
+
+                      {ceremony.idealPara && (
+                        <div className="mb-6">
+                          <h4 className="font-serif italic text-olive text-[1.1rem] mb-3">Ideal para:</h4>
+                          <ul className="flex flex-col gap-2">
+                            {ceremony.idealPara.map((item) => (
+                              <li key={item} className="flex gap-3 text-charcoal/70 leading-relaxed">
+                                <span className="text-olive shrink-0">&rarr;</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {ceremony.accentLine &&
+                        (Array.isArray(ceremony.accentLine) ? ceremony.accentLine : [ceremony.accentLine]).map(
+                          (line) => (
+                            <p
+                              key={line}
+                              className="font-serif italic text-olive text-[1.1rem] leading-relaxed mb-6"
+                            >
+                              {line}
+                            </p>
+                          ),
+                        )}
+
+                      {ceremony.finalNote && (
+                        <p className="font-serif italic text-charcoal/60 leading-relaxed mb-6">
+                          {ceremony.finalNote}
+                        </p>
+                      )}
 
                       <p className="mt-6 text-sm text-charcoal/50">{ceremony.details}</p>
 

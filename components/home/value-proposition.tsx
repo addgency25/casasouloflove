@@ -86,7 +86,7 @@ export function ValueProposition() {
           <div className="flex flex-col md:flex-row items-center justify-center">
             <div className="text-center py-6 md:py-0 md:px-12 border-b md:border-b-0 md:border-r" style={{ borderColor: "rgba(42, 42, 37, 0.1)" }}>
               <span className="font-serif font-light" style={{ fontSize: "2rem", color: "#2a2a25" }}>
-                500+
+                3.000+
               </span>
               <p 
                 className="uppercase tracking-[0.25em] font-medium mt-2"
@@ -97,7 +97,7 @@ export function ValueProposition() {
             </div>
             <div className="text-center py-6 md:py-0 md:px-12 border-b md:border-b-0 md:border-r" style={{ borderColor: "rgba(42, 42, 37, 0.1)" }}>
               <span className="font-serif font-light" style={{ fontSize: "2rem", color: "#2a2a25" }}>
-                8+
+                17+
               </span>
               <p 
                 className="uppercase tracking-[0.25em] font-medium mt-2"
