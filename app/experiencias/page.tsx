@@ -19,7 +19,7 @@ type Ceremony = {
   esperar: string[]
   note?: string
   idealPara?: string[]
-  accentLine?: string
+  accentLine?: string | string[]
   details: string
 }
 
@@ -86,6 +86,39 @@ const plantasDePoder: Ceremony[] = [
     ],
     accentLine: "Si estás lista/o para cruzar el umbral, este es el portal.",
     details: "5-8 horas · Presencial Miami · Entrevista previa requerida",
+  },
+  {
+    label: "Limpieza Energética",
+    title: "Limpieza y Balance —",
+    subtitle: null,
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC00271.JPG-BC01b6qlIXqOnf4BjU7rkdnKyn9TSd.jpeg",
+    queEs:
+      "Una experiencia integral de renovación e higiene espiritual. Es equilibrio interno — muchas personas describen la sensación como si se quitaran kilos de emociones acumuladas. Sin llevarte tan lejos, te trae de vuelta a la presencia, y desde ese silencio, vuelves a tomar tu fuerza.",
+    incluye: [
+      "Rapé (abuelo tabaco y otras plantas pulverizadas)",
+      "Meditación guiada",
+      "Sound Healing con cuencos de cristal y sonidos chamánicos",
+    ],
+    esperar: [
+      "Presencia real de tu cuerpo, mente y alma",
+      "Silencio mental profundo",
+      "Enraizamiento",
+      "Claridad emocional",
+      "Sensación de empoderamiento",
+      "Alivio físico y energético",
+    ],
+    accentLine: [
+      "Entras con ruido, sales con claridad. Entras preocupado, sales más liviano.",
+      "No hay visiones como en otras medicinas. Si llegan, son un regalo, no la intención. A esta planta la llaman la mensajera, por abrir canales al calmar la mente y conectar con la sabiduría universal creadora.",
+    ],
+    idealPara: [
+      "Personas con ansiedad o exceso de pensamientos",
+      "Momentos de decisión",
+      "Antes de un cambio importante",
+      "Como preparación para otras ceremonias",
+    ],
+    details: "2-3 horas · Presencial Miami · Grupal o individual",
   },
   {
     label: "Ceremonia Sagrada",
@@ -243,11 +276,17 @@ export default function ExperienciasPage() {
                         </div>
                       )}
 
-                      {ceremony.accentLine && (
-                        <p className="font-serif italic text-olive text-[1.1rem] leading-relaxed mb-6">
-                          {ceremony.accentLine}
-                        </p>
-                      )}
+                      {ceremony.accentLine &&
+                        (Array.isArray(ceremony.accentLine) ? ceremony.accentLine : [ceremony.accentLine]).map(
+                          (line) => (
+                            <p
+                              key={line}
+                              className="font-serif italic text-olive text-[1.1rem] leading-relaxed mb-6"
+                            >
+                              {line}
+                            </p>
+                          ),
+                        )}
 
                       <p className="mt-6 text-sm text-charcoal/50">{ceremony.details}</p>
 
