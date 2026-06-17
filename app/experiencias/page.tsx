@@ -23,6 +23,7 @@ type Ceremony = {
   note?: string
   idealPara?: string[]
   accentLine?: string | string[]
+  finalNote?: string
   details: string
 }
 
@@ -165,17 +166,40 @@ const plantasDePoder: Ceremony[] = [
   },
   {
     label: "Experiencia Avanzada",
-    title: "Samadhi DMT",
-    subtitle: "Aya Mexicana",
+    label: "Experiencia Avanzada",
+    title: "Samadhi (La Aya Mexicana) DMT & IMAO",
+    subtitle: "Medicina Visionaria de Profundidad",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0205-X5HhHl67JLC4LcBOZsURdlTvuHhy4K.jpg",
     queEs:
-      "La experiencia más profunda de Casa Soul of Love. Samadhi utiliza DMT en formato de Ayahuasca Mexicana, ofreciendo un viaje de disolución del ego y reconexión con la fuente. Reservada para quienes ya han transitado experiencias previas con plantas de poder.",
-    esperar: [
-      "Disolución temporal del ego y expansión total de conciencia",
-      "Encuentro profundo con tu ser esencial",
-      "Espacio ceremonial sagrado con música y guía constante",
-      "Integración extendida con Norge post-ceremonia",
+      "Samadhi es una experiencia ceremonial de larga duración. Se recibe en cápsulas y el viaje puede extenderse por horas. Contiene moléculas similares a la Ayahuasca.",
+    queEsExtra: [
+      {
+        text: "Es una medicina de presencia constante: silenciosa, contemplativa y profundamente reveladora. Es un proceso sostenido entre conciencia, mente, corazón y espíritu. Samadhi trabaja en capas internas, permitiendo que emerjan comprensiones que antes parecían confusas o difíciles.",
+      },
     ],
-    details: "6-8 horas · Presencial Miami · Entrevista previa requerida",
+    incluye: [
+      "Día completo de ceremonia",
+      "Ritual de rapé para limpieza y centrado",
+      "Meditación de intención",
+      "Acompañamiento continuo durante todo el proceso",
+      "Espacio seguro y contención",
+    ],
+    esperar: [
+      "Conexión espiritual profunda",
+      "Sensación de guía o presencia sutil de entidades celestiales",
+      "Visiones reveladoras",
+      "Silencio interno claro",
+      "Entendimientos que continúan días después",
+      "Nueva perspectiva sobre situaciones personales",
+    ],
+    idealPara: [
+      "Personas que buscan respuestas profundas en situaciones emocionales",
+      "Procesos de transformación interna significativa",
+      "Quienes están listas/os para una expansión de conciencia sostenida",
+      "Momentos de transición o búsqueda espiritual seria",
+    ],
+    finalNote: "Requiere preparación y entrevista previa.",
+    details: "6-10 horas · Presencial Miami · Entrevista previa requerida",
   },
 ]
 
@@ -261,7 +285,7 @@ export default function ExperienciasPage() {
                         {ceremony.title} &mdash;
                       </h3>
                       {ceremony.subtitle && (
-                        <p className="font-serif italic text-charcoal/50 text-lg mt-1">
+                        <p className="font-serif italic text-olive text-lg mt-1">
                           {ceremony.subtitle}
                         </p>
                       )}
@@ -347,6 +371,12 @@ export default function ExperienciasPage() {
                             </p>
                           ),
                         )}
+
+                      {ceremony.finalNote && (
+                        <p className="font-serif italic text-charcoal/60 leading-relaxed mb-6">
+                          {ceremony.finalNote}
+                        </p>
+                      )}
 
                       <p className="mt-6 text-sm text-charcoal/50">{ceremony.details}</p>
 
