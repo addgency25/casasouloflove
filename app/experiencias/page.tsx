@@ -19,6 +19,7 @@ type Ceremony = {
   esperar: string[]
   note?: string
   idealPara?: string[]
+  accentLine?: string
   details: string
 }
 
@@ -55,17 +56,36 @@ const plantasDePoder: Ceremony[] = [
   },
   {
     label: "Macrodosis",
-    title: "Macrodosis Mushroom: Limpieza y Balance",
+    title: "Macrodosis Mushroom Meditation",
     subtitle: null,
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4531%20%281%29-Gw7mirHRfQskzW9SX1NpefUaJejd3t.jpg",
     queEs:
-      "Ceremonia de sanación profunda con dosis completas de psilocibina. Un viaje interior de limpieza emocional y reequilibrio energético, facilitado por Norge en un ambiente seguro, sagrado y completamente sostenido.",
-    esperar: [
-      "Una experiencia transformadora de soltar lo que ya no sirve",
-      "Acompañamiento profesional durante todo el proceso",
-      "Música ceremonial, aromaterapia y contención amorosa",
-      "Sesión de integración posterior incluida",
+      "Una experiencia meditativa profunda, guiada y contenida, diseñada para explorar estados expandidos de conciencia en ceremonia de larga duración. Apunta a la introspección, la apertura emocional, la percepción ampliada y el contacto con capas más profundas del sentir.",
+    incluye: [
+      "Dosis personalizada de psilocibina, desde 2 gramos hasta 10 gramos",
+      "Ritual de rapé para abrir el espacio y recibir en calma este viaje a tu interior",
+      "Preparación e intención consciente",
+      "Meditación guiada",
+      "Sonido terapéutico",
+      "Acompañamiento cercano durante todo el proceso",
+      "Integración y cierre consciente",
     ],
-    details: "5-6 horas · Presencial Miami · Entrevista previa requerida",
+    esperar: [
+      "Expansión emocional",
+      "Liberación profunda",
+      "Comprensiones claras y cambios de percepción de vida",
+      "Reconexión con tu esencia, visiones de otras dimensiones o espacios",
+      "Apertura del corazón",
+    ],
+    note: "Cada viaje es único. Yo sostengo el espacio para que puedas entregarte con confianza, sintiéndote protegido y amado.",
+    idealPara: [
+      "Personas que estén listas para ir bien profundo y sostener una gran expansión de conciencia — esto es un antes y un después",
+      "Procesos de transición por pérdidas, o búsqueda de superar traumas de esta vida, ancestrales o de vidas pasadas",
+      "Quienes desean transformación real, no solo relajación — aquí no es para escapar, es recordar, sentir y sanar",
+    ],
+    accentLine: "Si estás lista/o para cruzar el umbral, este es el portal.",
+    details: "5-8 horas · Presencial Miami · Entrevista previa requerida",
   },
   {
     label: "Ceremonia Sagrada",
@@ -221,6 +241,12 @@ export default function ExperienciasPage() {
                             ))}
                           </ul>
                         </div>
+                      )}
+
+                      {ceremony.accentLine && (
+                        <p className="font-serif italic text-olive text-[1.1rem] leading-relaxed mb-6">
+                          {ceremony.accentLine}
+                        </p>
                       )}
 
                       <p className="mt-6 text-sm text-charcoal/50">{ceremony.details}</p>
