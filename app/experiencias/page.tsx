@@ -14,6 +14,7 @@ type Ceremony = {
   title: string
   subtitle: string | null
   image?: string
+  imageRotate?: boolean
   queEs: string
   queEsExtra?: { text: string; italic?: boolean }[]
   incluye?: string[]
@@ -128,6 +129,7 @@ const plantasDePoder: Ceremony[] = [
     title: "Awakening in Amor: Sacred Plants Xanga DMT",
     subtitle: null,
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0302-qoEURKMeSHa5lmLeRMrpWqbDnAB6u5.jpg",
+    imageRotate: true,
     queEs:
       "Una ceremonia guiada con plantas sagradas utilizadas como herramientas de conexión con el astral y nuevas dimensiones. Un viaje de apertura del corazón, expansión de conciencia y conexión espiritual. Apertura profunda del 3er ojo para ver y sentir más allá de esta realidad.",
     queEsExtra: [
@@ -245,11 +247,22 @@ export default function ExperienciasPage() {
                 {/* Image area */}
                 <div className={imageLeft ? "lg:order-1" : "lg:order-2"}>
                   {ceremony.image ? (
-                    <img
-                      src={ceremony.image || "/placeholder.svg"}
-                      alt={ceremony.title}
-                      className="w-full aspect-[4/3] object-cover rounded-sm"
-                    />
+                    ceremony.imageRotate ? (
+                      <div className="w-full aspect-[4/3] rounded-sm overflow-hidden">
+                        <img
+                          src={ceremony.image || "/placeholder.svg"}
+                          alt={ceremony.title}
+                          className="w-full h-full object-cover"
+                          style={{ transform: "rotate(-90deg) scale(1.333)" }}
+                        />
+                      </div>
+                    ) : (
+                      <img
+                        src={ceremony.image || "/placeholder.svg"}
+                        alt={ceremony.title}
+                        className="w-full aspect-[4/3] object-cover rounded-sm"
+                      />
+                    )
                   ) : (
                     <div className="w-full aspect-[4/3] rounded-sm bg-forest flex items-center justify-center p-8">
                       <span className="font-serif italic text-cream/10 text-3xl lg:text-4xl text-center text-balance leading-tight">
